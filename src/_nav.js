@@ -1,5 +1,5 @@
-import React from 'react'
-import CIcon from '@coreui/icons-react'
+import React from 'react';
+import CIcon from '@coreui/icons-react';
 import {
   cilBell,
   cilCalculator,
@@ -12,8 +12,8 @@ import {
   cilPuzzle,
   cilSpeedometer,
   cilStar,
-} from '@coreui/icons'
-import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+} from '@coreui/icons';
+import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react';
 
 const _nav = [
   {
@@ -279,8 +279,18 @@ const _nav = [
       },
       {
         component: CNavItem,
+        name: 'Update',
+        to: '/update',
+      },
+      {
+        component: CNavItem,
         name: 'Register',
         to: '/register',
+      },
+      {
+        component: CNavItem,
+        name: 'Users',
+        to: '/users',
       },
       {
         component: CNavItem,
@@ -300,6 +310,6 @@ const _nav = [
     href: 'https://coreui.io/react/docs/templates/installation/',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
-]
+];
 
-export default _nav
+export default _nav;

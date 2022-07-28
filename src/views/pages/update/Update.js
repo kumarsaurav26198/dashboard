@@ -15,21 +15,29 @@ import {
 import CIcon from '@coreui/icons-react';
 import { cilLockLocked, cilUser } from '@coreui/icons';
 
-const Register = () => {
+const Update = () => {
+  const [id, setID] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState();
 
-  const postData = () => {
-    const data = {
-      username,
-      email,
-      password,
-    };
+  useEffect(() => {
+    setID(localStorage.getItem('ID'));
+    setUsername(localStorage.getItem('username'));
+    setEmail(localStorage.getItem('email'));
+    setPassword(localStorage.getItem('password'));
+  }, []);
+
+  const updateAPIData = () => {
     axios
-      .post('https://62dbc602d1d97b9e0c53b578.mockapi.io/fakedata', data)
-      .then((res) => {})
-      .catch((err) => {});
+      .put(`https://62dbc602d1d97b9e0c53b578.mockapi.io/fakedata/${id}`, {
+        username,
+        email,
+        password,
+      })
+      .then(() => {
+        history.push('/read');
+      });
   };
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -39,8 +47,7 @@ const Register = () => {
             <CCard className="mx-4">
               <CCardBody className="p-4">
                 <CForm>
-                  <h1>Register</h1>
-                  <p className="text-medium-emphasis">Create your account</p>
+                  <h1>Update</h1>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilUser} />
@@ -48,6 +55,7 @@ const Register = () => {
                     <CFormInput
                       placeholder="Username"
                       autoComplete="username"
+                      value={username}
                       onChange={(e) => setUsername(e.target.value)}
                     />
                   </CInputGroup>
@@ -56,6 +64,7 @@ const Register = () => {
                     <CFormInput
                       placeholder="Email"
                       autoComplete="email"
+                      value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </CInputGroup>
@@ -67,23 +76,13 @@ const Register = () => {
                       type="password"
                       placeholder="Password"
                       autoComplete="new-password"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                  </CInputGroup>
-                  <CInputGroup className="mb-4">
-                    <CInputGroupText>
-                      <CIcon icon={cilLockLocked} />
-                    </CInputGroupText>
-                    <CFormInput
-                      type="password"
-                      placeholder="Repeat password"
-                      autoComplete="new-password"
+                      value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>
                   <div className="d-grid">
-                    <CButton color="success" onClick={postData}>
-                      Create Account
+                    <CButton color="warning" onClick={updateAPIData}>
+                      Update Account
                     </CButton>
                   </div>
                 </CForm>
@@ -96,4 +95,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Update;
