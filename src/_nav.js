@@ -279,6 +279,11 @@ const _nav = [
       },
       {
         component: CNavItem,
+        name: 'Dashboardd',
+        to: '/dashboardd',
+      },
+      {
+        component: CNavItem,
         name: 'Update',
         to: '/update',
       },

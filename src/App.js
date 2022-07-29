@@ -1,6 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './scss/style.scss';
+import Dashboardd from './views/pages/dashboard/Dashboardd';
 
 const loading = (
   <div className="pt-3 text-center">
@@ -9,7 +10,7 @@ const loading = (
 );
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'));
+// const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'));
 
 // Pages
 const Login = React.lazy(() => import('./views/pages/login/Login'));
@@ -34,6 +35,12 @@ class App extends Component {
               />
               <Route
                 exact
+                path="/dashboardd"
+                name="Dashboardd Page"
+                element={<Dashboardd />}
+              />
+              <Route
+                exact
                 path="/register"
                 name="Register Page"
                 element={<Register />}
@@ -43,16 +50,16 @@ class App extends Component {
                 path="/users"
                 name="Users Page"
                 element={<Users />}
-              />
-              <Route
+              /> 
+              {/* <Route
                 exact
                 path="/update"
                 name="Update Page"
                 element={<Update />}
               />
               <Route exact path="/404" name="Page 404" element={<Page404 />} />
-              <Route exact path="/500" name="Page 500" element={<Page500 />} />
-              <Route path="*" name="Home" element={<DefaultLayout />} />
+              <Route exact path="/500" name="Page 500" element={<Page500 />} /> */}
+              <Route path="*" name="Home" element={<Login />} />
             </Routes>
           </Suspense>
         </BrowserRouter>

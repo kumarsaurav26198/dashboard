@@ -15,10 +15,8 @@ import {
   CInputGroupText,
   CRow,
 } from '@coreui/react';
-import CIcon from '@coreui/icons-react';
-import { cilLockLocked, cilUser } from '@coreui/icons';
 import { AppSidebarNav } from 'src/components/AppSidebarNav';
-// import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router-dom';
 
 const Users = () => {
   const [APIData, setAPIData] = useState([]);
@@ -80,7 +78,7 @@ const Users = () => {
                             <th scope="row">{data.username}</th>
                             <th>{data.email}</th>
                             <th>{data.password}</th>
-                            <th>
+                            <th colspan="4">
                               <Link to="/update">
                                 <CButton
                                   type="button"
