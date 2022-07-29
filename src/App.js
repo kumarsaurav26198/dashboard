@@ -41,24 +41,24 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/register"
+                path="/createAccount"
                 name="Register Page"
-                element={<Register />}
+                element={<createAccount />}
               />
               <Route
                 exact
                 path="/users"
                 name="Users Page"
                 element={<Users />}
-              /> 
-              {/* <Route
+              />
+              <Route
                 exact
                 path="/update"
                 name="Update Page"
                 element={<Update />}
               />
               <Route exact path="/404" name="Page 404" element={<Page404 />} />
-              <Route exact path="/500" name="Page 500" element={<Page500 />} /> */}
+              <Route exact path="/500" name="Page 500" element={<Page500 />} />
               <Route path="*" name="Home" element={<Login />} />
             </Routes>
           </Suspense>

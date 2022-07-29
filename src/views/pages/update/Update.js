@@ -14,15 +14,20 @@ import {
 } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
 import { cilLockLocked, cilUser } from '@coreui/icons';
+import { useNavigate } from 'react-router-dom';
 
 const Update = () => {
-  const [id, setID] = useState('');
+  // let { id, username, email, password } = data;
+
+  const [id, setID] = useState(null);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    setID(localStorage.getItem('ID'));
+    setID(localStorage.getItem('id'));
     setUsername(localStorage.getItem('username'));
     setEmail(localStorage.getItem('email'));
     setPassword(localStorage.getItem('password'));
@@ -36,7 +41,7 @@ const Update = () => {
         password,
       })
       .then(() => {
-        history.push('/read');
+        navigate('/users');
       });
   };
   return (
@@ -64,7 +69,7 @@ const Update = () => {
                     <CFormInput
                       placeholder="Email"
                       autoComplete="email"
-                      value={email}
+                      // value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </CInputGroup>
@@ -76,7 +81,7 @@ const Update = () => {
                       type="password"
                       placeholder="Password"
                       autoComplete="new-password"
-                      value={password}
+                      // value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>

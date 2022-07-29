@@ -16,7 +16,9 @@ import {
   CRow,
 } from '@coreui/react';
 import { AppSidebarNav } from 'src/components/AppSidebarNav';
-// import { useHistory } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
+
+import { createBrowserHistory } from 'history';
 
 const Users = () => {
   const [APIData, setAPIData] = useState([]);
@@ -36,6 +38,7 @@ const Users = () => {
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
   };
+
   const getData = () => {
     axios
       .get(`https://62dbc602d1d97b9e0c53b578.mockapi.io/fakedata`)
@@ -56,7 +59,7 @@ const Users = () => {
       <AppSidebarNav />
       <CContainer>
         <CRow className="justify-content-center">
-          <CCol md={8}>
+          <CCol md={10}>
             <CCardGroup>
               <CCard className="p-4">
                 <CCardBody>
@@ -67,6 +70,7 @@ const Users = () => {
                         <th scope="col">Username</th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
+                        <th scope="col">Avatar</th>
                         <th scope="col-2">Action</th>
                       </tr>
                     </thead>
@@ -74,11 +78,18 @@ const Users = () => {
                       {APIData.map((data) => {
                         return (
                           <tr>
-                            <th scope="row">{data.id}</th>
-                            <th scope="row">{data.username}</th>
-                            <th>{data.email}</th>
-                            <th>{data.password}</th>
-                            <th colspan="4">
+                            <td scope="row">{data.id}</td>
+                            <td scope="row">{data.username}</td>
+                            <td>{data.email}</td>
+                            <td>{data.password}</td>
+                            <td>
+                              <Avatar
+                                alt="Remy Sharp"
+                                src="/static/images/avatar/1.jpg"
+                                sx={{ width: 56, height: 56 }}
+                              />
+                            </td>
+                            <td colSpan="4">
                               <Link to="/update">
                                 <CButton
                                   type="button"
@@ -88,8 +99,8 @@ const Users = () => {
                                   Update
                                 </CButton>
                               </Link>
-                            </th>
-                            <th>
+                            </td>
+                            <td>
                               <CButton
                                 type="button"
                                 className="btn btn-danger"
@@ -97,7 +108,7 @@ const Users = () => {
                               >
                                 Delete
                               </CButton>
-                            </th>
+                            </td>
                           </tr>
                         );
                       })}

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useRef, useEffect } from 'react';
 import {
   CButton,
   CCard,
@@ -13,23 +12,14 @@ import {
   CRow,
 } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
-import { cilLockLocked, cilUser, cilVideo } from '@coreui/icons';
+import { cilLockLocked, cilVideo } from '@coreui/icons';
 
-const Register = () => {
-  const [username, setUsername] = useState('');
+const CreateAcc = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState('');
 
-  const postData = () => {
-    const data = {
-      username,
-      email,
-      password,
-    };
-    axios
-      .post('https://62dbc602d1d97b9e0c53b578.mockapi.io/fakedata', data)
-      .then((res) => {})
-      .catch((err) => {});
+  const createAccButton = () => {
+    console.log('Home');
   };
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -39,24 +29,14 @@ const Register = () => {
             <CCard className="mx-4">
               <CCardBody className="p-4">
                 <CForm>
-                  <h1>Register</h1>
-                  <p className="text-medium-emphasis">Create your account</p>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupText>
-                      <CIcon icon={cilUser} />
-                    </CInputGroupText>
-                    <CFormInput
-                      placeholder="Username"
-                      autoComplete="username"
-                      onChange={(e) => setUsername(e.target.value)}
-                    />
-                  </CInputGroup>
+                  <h1>Create Acc</h1>
+
                   <CInputGroup className="mb-3">
                     <CInputGroupText>@</CInputGroupText>
                     <CFormInput
                       placeholder="Email"
                       autoComplete="email"
-                      onChange={(e) => setEmail(e.target.value)}
+                      //   onChange={(e) => setEmail(e.target.value)}
                     />
                   </CInputGroup>
                   <CInputGroup className="mb-3">
@@ -73,7 +53,7 @@ const Register = () => {
                       type="password"
                       placeholder="Password"
                       autoComplete="new-password"
-                      onChange={(e) => setPassword(e.target.value)}
+                      //   onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>
                   <CInputGroup className="mb-4">
@@ -84,11 +64,11 @@ const Register = () => {
                       type="password"
                       placeholder="Repeat password"
                       autoComplete="new-password"
-                      onChange={(e) => setPassword(e.target.value)}
+                      //   onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>
                   <div className="d-grid">
-                    <CButton color="success" onClick={postData}>
+                    <CButton color="success" onClick={createAccButton}>
                       Create Account
                     </CButton>
                   </div>
@@ -102,4 +82,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default CreateAcc;
