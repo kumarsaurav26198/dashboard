@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CButton,
@@ -18,22 +18,21 @@ import { cilLockLocked, cilUser } from '@coreui/icons';
 import Dashboardd from '../dashboard/Dashboardd';
 
 const Login = () => {
-  const email = useRef();
-  const password = useRef();
-  const getEmail = localStorage.getItem('emailData');
-  const getPassword = localStorage.getItem('passwordData');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [islogin, setIslogin] = useState(false);
+
+  const getEmail = localStorage.getItem('setEmail');
+  const getPassword = localStorage.getItem('setPassword');
   const handleSubmit = () => {
-    if (
-      email.current.value == 'kumarsaurav26196@gmail.com' &&
-      password.current.value == '12345'
-    ) {
-      localStorage.setItem('emailData', 'kumarsaurav26196@gmail.com');
-      localStorage.setItem('passwordData', '12345');
+    console.log(getEmail);
+    if (email === getEmail && password === getPassword) {
+      setIslogin(true);
     }
   };
   return (
     <>
-      {getEmail && getPassword ? (
+      {islogin ? (
         <Dashboardd />
       ) : (
         <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -55,7 +54,8 @@ const Login = () => {
                           <CFormInput
                             placeholder="Email"
                             autoComplete="email"
-                            ref={email}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                         </CInputGroup>
                         <CInputGroup className="mb-4">
@@ -66,7 +66,8 @@ const Login = () => {
                             type="password"
                             placeholder="Password"
                             autoComplete="current-password"
-                            ref={password}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </CInputGroup>
                         <CRow>
@@ -102,14 +103,14 @@ const Login = () => {
                           elit, sed do eiusmod tempor incididunt ut labore et
                           dolore magna aliqua.
                         </p>
-                        <Link to="/register">
+                        <Link to="/createAccount">
                           <CButton
                             color="primary"
                             className="mt-3"
                             active
                             tabIndex={-1}
                           >
-                            Register Now!
+                            Create account Now!
                           </CButton>
                         </Link>
                       </div>

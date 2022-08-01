@@ -18,8 +18,6 @@ import {
 import { AppSidebarNav } from 'src/components/AppSidebarNav';
 import Avatar from '@mui/material/Avatar';
 
-import { createBrowserHistory } from 'history';
-
 const Users = () => {
   const [APIData, setAPIData] = useState([]);
   useEffect(() => {
@@ -30,8 +28,9 @@ const Users = () => {
       });
   }, []);
 
+  console.log(APIData);
+
   const setData = (data) => {
-    // let history = useHistory();
     let { id, username, email, password } = data;
     localStorage.setItem('ID', id);
     localStorage.setItem('username', username);

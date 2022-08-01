@@ -279,6 +279,11 @@ const _nav = [
       },
       {
         component: CNavItem,
+        name: 'BarChats',
+        to: '/barchats',
+      },
+      {
+        component: CNavItem,
         name: 'CreateAcc',
         to: '/createAccount',
       },

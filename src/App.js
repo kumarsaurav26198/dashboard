@@ -1,7 +1,9 @@
 import React, { Component, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import BarChats from './views/pages/charts/BarChats';
 import './scss/style.scss';
 import Dashboardd from './views/pages/dashboard/Dashboardd';
+// import  from './views/pages/register/Register';
 
 const loading = (
   <div className="pt-3 text-center">
@@ -14,11 +16,13 @@ const loading = (
 
 // Pages
 const Login = React.lazy(() => import('./views/pages/login/Login'));
-const Register = React.lazy(() => import('./views/pages/register/Register'));
+const CreateAcc = React.lazy(() => import('./views/pages/createAcc/CreateAcc'));
 const Page404 = React.lazy(() => import('./views/pages/page404/Page404'));
 const Page500 = React.lazy(() => import('./views/pages/page500/Page500'));
 const Users = React.lazy(() => import('./views/pages/users/Users'));
 const Update = React.lazy(() => import('./views/pages/update/Update'));
+const Register = React.lazy(() => import('./views/pages/register/Register'));
+const BarChats = React.lazy(() => import('./views/pages/charts/BarChats'));
 
 class App extends Component {
   render() {
@@ -42,8 +46,8 @@ class App extends Component {
               <Route
                 exact
                 path="/createAccount"
-                name="Register Page"
-                element={<createAccount />}
+                name="CreateAccount Page"
+                element={<CreateAcc />}
               />
               <Route
                 exact
@@ -56,6 +60,18 @@ class App extends Component {
                 path="/update"
                 name="Update Page"
                 element={<Update />}
+              />
+              <Route
+                exact
+                path="/register"
+                name="Register Page"
+                element={<Register />}
+              />
+              <Route
+                exact
+                path="/barChats"
+                name="BarChats Page"
+                element={<BarChats />}
               />
               <Route exact path="/404" name="Page 404" element={<Page404 />} />
               <Route exact path="/500" name="Page 500" element={<Page500 />} />

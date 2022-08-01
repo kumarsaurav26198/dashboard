@@ -17,17 +17,13 @@ import { cilLockLocked, cilUser } from '@coreui/icons';
 import { useNavigate } from 'react-router-dom';
 
 const Update = () => {
-  // let { id, username, email, password } = data;
-
   const [id, setID] = useState(null);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState();
 
-  const navigate = useNavigate();
-
   useEffect(() => {
-    setID(localStorage.getItem('id'));
+    setID(localStorage.getItem('ID'));
     setUsername(localStorage.getItem('username'));
     setEmail(localStorage.getItem('email'));
     setPassword(localStorage.getItem('password'));
@@ -53,6 +49,9 @@ const Update = () => {
               <CCardBody className="p-4">
                 <CForm>
                   <h1>Update</h1>
+                  <p className="text-medium-emphasis">
+                    Updae your account details
+                  </p>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilUser} />

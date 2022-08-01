@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   CButton,
   CCard,
@@ -19,7 +21,9 @@ const CreateAcc = () => {
   const [password, setPassword] = useState('');
 
   const createAccButton = () => {
-    console.log('Home');
+    localStorage.setItem('setEmail', email);
+    localStorage.setItem('setPassword', password);
+    console.log(email, password);
   };
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
@@ -29,22 +33,18 @@ const CreateAcc = () => {
             <CCard className="mx-4">
               <CCardBody className="p-4">
                 <CForm>
-                  <h1>Create Acc</h1>
-
+                  <h1>Create Account</h1>
+                  <p className="text-medium-emphasis">Create your account</p>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>@</CInputGroupText>
                     <CFormInput
                       placeholder="Email"
                       autoComplete="email"
-                      //   onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupText>
-                      <CIcon icon={cilVideo} />
-                    </CInputGroupText>
-                    <CFormInput />
-                  </CInputGroup>
+
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilLockLocked} />
@@ -53,7 +53,8 @@ const CreateAcc = () => {
                       type="password"
                       placeholder="Password"
                       autoComplete="new-password"
-                      //   onChange={(e) => setPassword(e.target.value)}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>
                   <CInputGroup className="mb-4">
@@ -64,12 +65,13 @@ const CreateAcc = () => {
                       type="password"
                       placeholder="Repeat password"
                       autoComplete="new-password"
-                      //   onChange={(e) => setPassword(e.target.value)}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>
                   <div className="d-grid">
                     <CButton color="success" onClick={createAccButton}>
-                      Create Account
+                      <Link to="/">Create Account</Link>
                     </CButton>
                   </div>
                 </CForm>

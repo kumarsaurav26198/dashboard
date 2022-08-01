@@ -11,6 +11,10 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
+  CDropdown,
+  CDropdownToggle,
+  CDropdownMenu,
+  CDropdownItem,
 } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
 import { cilLockLocked, cilUser, cilVideo } from '@coreui/icons';
@@ -39,8 +43,8 @@ const Register = () => {
             <CCard className="mx-4">
               <CCardBody className="p-4">
                 <CForm>
-                  <h1>Register</h1>
-                  <p className="text-medium-emphasis">Create your account</p>
+                  <h1>Create User</h1>
+                  <p className="text-medium-emphasis">Create users account</p>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilUser} />
@@ -59,11 +63,20 @@ const Register = () => {
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </CInputGroup>
+
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilVideo} />
                     </CInputGroupText>
-                    <CFormInput />
+                    <CDropdown>
+                      <CFormInput></CFormInput>
+
+                      <CDropdownMenu>
+                        <CDropdownItem>Action</CDropdownItem>
+                        <CDropdownItem>Another action</CDropdownItem>
+                        <CDropdownItem>Something else here</CDropdownItem>
+                      </CDropdownMenu>
+                    </CDropdown>
                   </CInputGroup>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
@@ -89,7 +102,7 @@ const Register = () => {
                   </CInputGroup>
                   <div className="d-grid">
                     <CButton color="success" onClick={postData}>
-                      Create Account
+                      Create Users
                     </CButton>
                   </div>
                 </CForm>
