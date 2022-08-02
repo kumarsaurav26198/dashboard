@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 
 import {
   CButton,
@@ -28,13 +29,18 @@ const Users = () => {
       });
   }, []);
 
-  console.log(APIData);
+  const tableRef = useRef(null);
+
+  const excelExport = () => {
+    console.log('Hbghjd');
+  };
 
   const setData = (data) => {
-    let { id, username, email, password } = data;
+    let { id, username, email, avatar, password } = data;
     localStorage.setItem('ID', id);
     localStorage.setItem('username', username);
     localStorage.setItem('email', email);
+    localStorage.setItem('avatar', avatar);
     localStorage.setItem('password', password);
   };
 
@@ -58,11 +64,14 @@ const Users = () => {
       <AppSidebarNav />
       <CContainer>
         <CRow className="justify-content-center">
-          <CCol md={10}>
+          <CCol md={19}>
+            <p>
+              All the data are comming a from api and showing that in the table
+            </p>
             <CCardGroup>
               <CCard className="p-4">
                 <CCardBody>
-                  <table className="table">
+                  <table className="table" ref={tableRef}>
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
@@ -70,7 +79,7 @@ const Users = () => {
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
                         <th scope="col">Avatar</th>
-                        <th scope="col-2">Action</th>
+                        <th scope="col-2"> &nbsp; Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -84,7 +93,7 @@ const Users = () => {
                             <td>
                               <Avatar
                                 alt="Remy Sharp"
-                                src="/static/images/avatar/1.jpg"
+                                src={data.avatar}
                                 sx={{ width: 56, height: 56 }}
                               />
                             </td>
@@ -93,7 +102,7 @@ const Users = () => {
                                 <CButton
                                   type="button"
                                   className="btn btn-warning"
-                                  onClick={() => setData(data.id)}
+                                  onClick={() => setData(data)}
                                 >
                                   Update
                                 </CButton>
@@ -113,6 +122,20 @@ const Users = () => {
                       })}
                     </tbody>
                   </table>
+                  <CButton
+                    type="button"
+                    className="btn btn-warning"
+                    onClick={excelExport()}
+                  >
+                    <ReactHTMLTableToExcel
+                      id="test-table-xls-button"
+                      className="download-table-xls-button"
+                      table="table-to-xls"
+                      filename="tablexls"
+                      sheet="tablexls"
+                      buttonText="Download as XLS"
+                    />
+                  </CButton>
                 </CCardBody>
               </CCard>
             </CCardGroup>

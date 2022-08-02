@@ -14,7 +14,7 @@ import {
 } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
 import { cilLockLocked, cilUser } from '@coreui/icons';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Update = () => {
   const [id, setID] = useState(null);
@@ -68,7 +68,7 @@ const Update = () => {
                     <CFormInput
                       placeholder="Email"
                       autoComplete="email"
-                      // value={email}
+                      value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </CInputGroup>
@@ -80,14 +80,16 @@ const Update = () => {
                       type="password"
                       placeholder="Password"
                       autoComplete="new-password"
-                      // value={password}
+                      value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
                   </CInputGroup>
                   <div className="d-grid">
-                    <CButton color="warning" onClick={updateAPIData}>
-                      Update Account
-                    </CButton>
+                    <Link to="/users">
+                      <CButton color="warning" onClick={updateAPIData}>
+                        Update Account
+                      </CButton>
+                    </Link>
                   </div>
                 </CForm>
               </CCardBody>
