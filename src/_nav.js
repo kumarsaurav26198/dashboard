@@ -21,11 +21,101 @@ const _nav = [
     name: 'Dashboard',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    badge: {
-      color: 'info',
-      text: 'NEW',
-    },
+    // badge: {
+    //   color: 'info',
+    //   text: 'NEW',
+    // },
   },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Placement and validation  period',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated /Manual Import of debt Account',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Pre-suit Collection',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Suit',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Post-suit Collection',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Judgement',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Post-Judgement Collection',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Post-Judgement Collection',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Garnishment',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Account closer',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Automated',
+  //   to: '/automated',
+  //   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+  // },
   // {
   //   component: CNavTitle,
   //   name: 'Theme',
@@ -41,6 +131,352 @@ const _nav = [
   //   name: 'Typography',
   //   to: '/theme/typography',
   //   icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Placement and validation  period',
+  // },
+  {
+    component: CNavGroup,
+    name: 'Placement and validation  period',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Pre-suit Collection',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Suit',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Post-suit Collection',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Judgement',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Post-Judgement Collection',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Garnishment',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Account Closer',
+    to: '/first',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Automated',
+        to: '/first/automated',
+      },
+      {
+        component: CNavItem,
+        name: 'Scrubs',
+        to: '/first/scrubs',
+      },
+      {
+        component: CNavItem,
+        name: 'Media Review',
+        to: '/first/mediareview',
+      },
+      {
+        component: CNavItem,
+        name: 'Skip Trace',
+        to: '/first/skiptrace',
+      },
+      {
+        component: CNavItem,
+        name: 'Attorney Review',
+        to: '/first/attorneyreview',
+      },
+      {
+        component: CNavItem,
+        name: 'Validation Notice',
+        to: '/first/validationnotice',
+      },
+    ],
+  },
+  // {
+  //   component: CNavGroup,
+  //   name: 'Placement and validation  period',
+  //   to: '/first',
+  //   icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+  //   items: [
+  //     {
+  //       component: CNavItem,
+  //       name: 'Automated',
+  //       to: '/first/automated',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Scrubs',
+  //       to: '/first/scrubs',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Media Review',
+  //       to: '/first/mediareview',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Skip Trace',
+  //       to: '/first/skiptrace',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Attorney Review',
+  //       to: '/first/attorneyreview',
+  //     },
+  //     {
+  //       component: CNavItem,
+  //       name: 'Validation Notice',
+  //       to: '/first/validationnotice',
+  //     },
+  //   ],
   // },
   // {
   //   component: CNavTitle,
@@ -263,10 +699,22 @@ const _nav = [
   //     text: 'NEW',
   //   },
   // },
-  {
-    component: CNavTitle,
-    name: 'Extras',
-  },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Extras',
+  // },
+  // {
+  //   component: CNavTitle,
+  //   name: 'Placement and validation  period',
+  //   icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
+  //   items: [
+  //     {
+  //       component: CNavItem,
+  //       name: 'Automated',
+  //       to: '/automated',
+  //     },
+  //   ]
+  // },
   {
     component: CNavGroup,
     name: 'Pages',
@@ -277,36 +725,36 @@ const _nav = [
         name: 'Login',
         to: '/login',
       },
-      {
-        component: CNavItem,
-        name: 'BarChats',
-        to: '/barchats',
-      },
-      {
-        component: CNavItem,
-        name: 'CreateAcc',
-        to: '/createAccount',
-      },
-      {
-        component: CNavItem,
-        name: 'Dashboardd',
-        to: '/dashboardd',
-      },
-      {
-        component: CNavItem,
-        name: 'Update',
-        to: '/update',
-      },
-      {
-        component: CNavItem,
-        name: 'Register',
-        to: '/register',
-      },
-      {
-        component: CNavItem,
-        name: 'Users',
-        to: '/users',
-      },
+      // {
+      //   component: CNavItem,
+      //   name: 'BarChats',
+      //   to: '/barchats',
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'CreateAcc',
+      //   to: '/createAccount',
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'Dashboardd',
+      //   to: '/dashboardd',
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'Update',
+      //   to: '/update',
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'Register',
+      //   to: '/register',
+      // },
+      // {
+      //   component: CNavItem,
+      //   name: 'Users',
+      //   to: '/users',
+      // },
       {
         component: CNavItem,
         name: 'Error 404',
